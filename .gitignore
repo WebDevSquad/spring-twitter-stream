@@ -24,3 +24,6 @@ buildNumber.properties
 *.iws
 *.iml
 *.ipr
+
+# creds
+src/main/resources/application.properties
