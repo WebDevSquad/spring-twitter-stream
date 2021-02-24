@@ -10,13 +10,12 @@ public class TestController {
     @RequestMapping("/test1")
     public String hello(Model model){
         model.addAttribute("message", "hello from the controller !!!");
-        return "search";
+        return "resultPage";
     }
 
-//    @RequestMapping("/test12/")
-//    public String hello2(@RequestParam("name") String userName, Model model){
-//        model.addAttribute("message", "hello,  " + userName);
-//        return "resultPage";
-//    }
-//}
+    @RequestMapping("/test2")
+    public String hello2(Model model){
+        model.addAttribute("message", "hello  2 from the controller !!!");
+        return "resultPage";
+    }
 }
