@@ -24,10 +24,10 @@ public class TweetController {
 
     @RequestMapping("/twitter")
     public String helloTwitter(@RequestParam(defaultValue = "ETF") String search, Model model){
-        //SearchResults searchResults = twitterImpl.searchOperations().search(search);
-        //System.out.println("searchResults = " + searchResults);
-        //String text = searchResults.getTweets().get(0).getText();
-        String tweets = "etf !!!";
+        SearchResults searchResults = twitterImpl.searchOperations().search(search);
+        System.out.println("searchResults = " + searchResults);
+        String tweets = searchResults.getTweets().get(0).getText();
+        //String tweets = "etf !!!";
         System.out.println("tweets = " + tweets);
         model.addAttribute("tweets", tweets);
         return "resultPage";
