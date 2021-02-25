@@ -1,6 +1,5 @@
 package com.rawsanj.tweet.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.social.config.annotation.EnableSocial;
@@ -20,14 +19,17 @@ public class TweetController {
         return "resultPage";
     }
 
+    @Autowired
     private Twitter twitterImpl;
 
     @RequestMapping("/twitter")
     public String helloTwitter(@RequestParam(defaultValue = "ETF") String search, Model model){
-        SearchResults searchResults = twitterImpl.searchOperations().search(search);
-        System.out.println("searchResults = " + searchResults);
+        //SearchResults searchResults = twitterImpl.searchOperations().search(search);
+        //System.out.println("searchResults = " + searchResults);
         //String text = searchResults.getTweets().get(0).getText();
-        //System.out.println("text = " + text);
+        String tweets = "etf !!!";
+        System.out.println("tweets = " + tweets);
+        model.addAttribute("tweets", tweets);
         return "resultPage";
     }
 }
